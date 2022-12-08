@@ -46,6 +46,7 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
         }
 
         // GET: Instruments/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -54,6 +55,7 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
         // POST: Instruments/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("instrumentID,name,manufacturerID,type,color,quantityBought,priceSold")] Instrument instrument)
@@ -68,6 +70,7 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
         }
 
         // GET: Instruments/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,6 +89,7 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
         // POST: Instruments/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("instrumentID,name,manufacturerID,type,color,quantityBought,priceSold")] Instrument instrument)
@@ -119,6 +123,7 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
         }
 
         // GET: Instruments/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -137,6 +142,7 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
         }
 
         // POST: Instruments/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
