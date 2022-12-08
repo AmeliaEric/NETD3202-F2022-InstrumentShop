@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Permissions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using NETD3202_F2022_InstrumentShop.Data;
 using NETD3202_F2022_InstrumentShop.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace NETD3202_F2022_InstrumentShop.Controllers
 {
@@ -148,6 +150,16 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
         private bool InstrumentExists(int id)
         {
             return _context.Instruments.Any(e => e.instrumentID == id);
+        }
+
+        public async Task<IActionResult> Searching()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> ShowSearchResults(string SearchName)
+        {
+            return View("Index", await _context.Instruments.Where(s => s.name.Contains(SearchName)).ToListAsync());
         }
     }
 }

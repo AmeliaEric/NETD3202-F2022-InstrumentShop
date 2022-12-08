@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using NETD3202_F2022_InstrumentShop.Data;
 using NETD3202_F2022_InstrumentShop.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace NETD3202_F2022_InstrumentShop.Controllers
 {
@@ -148,6 +149,16 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
         private bool RepairExists(int id)
         {
             return _context.Repairs.Any(e => e.repairID == id);
+        }
+
+        public async Task<IActionResult> Searching()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> ShowSearchResults(string SearchName)
+        {
+            return View("Index", await _context.Repairs.Where(s => s.owner.Contains(SearchName)).ToListAsync());
         }
     }
 }
