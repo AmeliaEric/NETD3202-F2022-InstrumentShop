@@ -156,9 +156,9 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
             return View();
         }
 
-        public async Task<IActionResult> ShowSearchResults(string SearchName)
+        public async Task<IActionResult> ShowSearchManufacturer(string SearchMan)
         {
-            return View("Index", await _context.Manufacturers.Where(s => s.name.Contains(SearchName)).ToListAsync());
+            return View("Index", await _context.Manufacturers.Where(s => s.name.Contains(SearchMan)).ToListAsync());
         }
     }
 }

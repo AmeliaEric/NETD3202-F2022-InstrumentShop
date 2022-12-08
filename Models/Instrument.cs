@@ -13,7 +13,7 @@ namespace NETD3202_F2022_InstrumentShop.Models
 
         public string name { get; set; }
 
-        public string manufacturerID { get; set; }
+        public int manufacturerID { get; set; }
 
         public string type { get; set; }
 

@@ -11,7 +11,7 @@ namespace NETD3202_F2022_InstrumentShop.Models
         [Key]
         public int repairID { get; set; }
 
-        public string instrumentID { get; set; }
+        public int instrumentID { get; set; }
 
         public string owner { get; set; }
 

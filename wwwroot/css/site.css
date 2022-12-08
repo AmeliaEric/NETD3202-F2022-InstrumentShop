@@ -1,4 +1,4 @@
-﻿.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+﻿x-ms-webview .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: sienna !important;
 }
 

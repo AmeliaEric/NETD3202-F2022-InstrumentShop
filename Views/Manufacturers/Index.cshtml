@@ -8,7 +8,7 @@
 
 <p>
     <a asp-action="Create">Create New</a>
-    <a asp-action="Create">Search Manufacturers</a>
+    <a asp-action="Searching">Search Manufacturers</a>
 </p>
 <table class="table">
     <thead>
@@ -40,6 +40,8 @@
             <th>
                 @Html.DisplayNameFor(model => model.postalCode)
             </th>
+            <th></th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
@@ -74,9 +76,13 @@
                 @Html.DisplayFor(modelItem => item.postalCode)
             </td>
             <td>
-                | <a asp-action="Edit" asp-route-id="@item.manufacturerID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.manufacturerID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.manufacturerID">Delete</a> |
+                <a asp-action="Edit" asp-route-id="@item.manufacturerID">Edit</a>
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.manufacturerID">Details</a>
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.manufacturerID">Delete</a>
             </td>
         </tr>
 }

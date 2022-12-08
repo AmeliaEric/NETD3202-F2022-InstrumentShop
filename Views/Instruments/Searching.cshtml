@@ -1,10 +1,10 @@
 ﻿@model NETD3202_F2022_InstrumentShop.Models.Instrument
 
-<h4>Search Instruments</h4>
+<h4>Search Instruments Inventory</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="ShowSearchResults">
+        <form asp-action="ShowSearchInstruments">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label name="SearchInstrument" class="control-label">Instrument Name</label>
@@ -12,7 +12,7 @@
                 <span asp-validation-for="name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Search" class="btn btn-primary" />
             </div>
         </form>
     </div>

@@ -8,35 +8,37 @@
 
 <p>
     <a asp-action="Create">Create New</a>
-    <a asp-action="Create">Search Repairs By Owner</a>
+    <a asp-action="Searching">Search Repairs By Owner</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.instrumentID)
+                Instrument ID
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.owner)
+                Owner
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.phone)
+                Phone Number
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.email)
+                Email
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.address)
+                Address
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.city)
+                City
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.province)
+                Province
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.postalCode)
+                Postal Code
             </th>
+            <th></th>
+            <th></th>
             <th></th>
         </tr>
     </thead>
@@ -68,9 +70,13 @@
                 @Html.DisplayFor(modelItem => item.postalCode)
             </td>
             <td>
-                | <a asp-action="Edit" asp-route-id="@item.repairID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.repairID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.repairID">Delete</a> |
+                <a asp-action="Edit" asp-route-id="@item.repairID">Edit</a>
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.repairID">Details</a>
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.repairID">Delete</a>
             </td>
         </tr>
 }
