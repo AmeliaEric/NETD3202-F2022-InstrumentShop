@@ -3,74 +3,78 @@
 @{
     ViewData["Title"] = "Index";
 }
-
+<!-- The Title of the page-->
 <h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
     <a asp-action="Searching">Search Instruments</a>
 </p>
+<!--Table of all Instruments in the database-->
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.instrumentID)
+                Instrument ID
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.name)
+                Instrument Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.manufacturerID)
+                Manufacturer ID
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.type)
+                Type
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.color)
+                Color
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.quantityBought)
+                Quantity Bought
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.priceSold)
+                Price Sold
             </th>
             <th></th>
         </tr>
     </thead>
+    <!--Goes through each Instrument in the database and displays all infromation accordingly-->
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.instrumentID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.manufacturerID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.color)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.quantityBought)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.priceSold)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.instrumentID">Edit</a>
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.instrumentID">Details</a>
-            </td>
-            <td>
-                <a asp-action="Delete" asp-route-id="@item.instrumentID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.instrumentID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.manufacturerID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.color)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.quantityBought)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.priceSold)
+                </td>
+                <!--Edit, Details, and Delete options for each instrument-->
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.instrumentID">Edit</a>
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.instrumentID">Details</a>
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.instrumentID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

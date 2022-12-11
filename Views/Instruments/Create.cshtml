@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Create";
 }
-
+<!-- The Title of the page-->
 <h1>Create</h1>
 
 <h4>Instrument</h4>
@@ -11,44 +11,51 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
+            <!-- Input for Instrument Name-->
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="name" class="control-label"></label>
+                <label asp-for="name" class="control-label">Instrument Name</label>
                 <input asp-for="name" class="form-control" />
                 <span asp-validation-for="name" class="text-danger"></span>
             </div>
+            <!-- Input for Instrument Manufacturer-->
             <div class="form-group">
-                <label asp-for="manufacturerID" class="control-label"></label>
+                <label asp-for="manufacturerID" class="control-label">Manufacturer ID</label>
                 <input asp-for="manufacturerID" class="form-control" />
                 <span asp-validation-for="manufacturerID" class="text-danger"></span>
             </div>
+            <!-- Input for Instrument Type-->
             <div class="form-group">
-                <label asp-for="type" class="control-label"></label>
+                <label asp-for="type" class="control-label">Type</label>
                 <input asp-for="type" class="form-control" />
                 <span asp-validation-for="type" class="text-danger"></span>
             </div>
+            <!-- Input for Instrument Colour-->
             <div class="form-group">
-                <label asp-for="color" class="control-label"></label>
+                <label asp-for="color" class="control-label">Color</label>
                 <input asp-for="color" class="form-control" />
                 <span asp-validation-for="color" class="text-danger"></span>
             </div>
+            <!-- Input for Instrument Quanity Bought-->
             <div class="form-group">
-                <label asp-for="quantityBought" class="control-label"></label>
+                <label asp-for="quantityBought" class="control-label">Quantity Bought</label>
                 <input asp-for="quantityBought" class="form-control" />
                 <span asp-validation-for="quantityBought" class="text-danger"></span>
             </div>
+            <!-- Input for Instrument Price Sold-->
             <div class="form-group">
-                <label asp-for="priceSold" class="control-label"></label>
+                <label asp-for="priceSold" class="control-label">Price Sold</label>
                 <input asp-for="priceSold" class="form-control" />
                 <span asp-validation-for="priceSold" class="text-danger"></span>
             </div>
+            <!-- Submission for Creation Fields-->
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
-
+<!-- Takes the user back to the index list-->
 <div>
     <a asp-action="Index">Back to List</a>
 </div>

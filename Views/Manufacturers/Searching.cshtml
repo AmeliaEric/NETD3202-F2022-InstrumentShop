@@ -1,5 +1,5 @@
 ﻿@model NETD3202_F2022_InstrumentShop.Models.Manufacturer
-
+ <!-- The Title of the page-->
 <h4>Search Manufacturers</h4>
 <hr />
 <div class="row">
@@ -12,12 +12,12 @@
                 <span asp-validation-for="name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Search" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
-
+<!-- Takes the user back to the index list-->
 <div>
     <a asp-action="Index">Back to List</a>
 </div>

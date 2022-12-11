@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace NETD3202_F2022_InstrumentShop.Models
 {
+    /// <summary>
+    /// Creates all the attributes for the database/class
+    /// </summary>
     public class Repair
     {
         [Key]
+        // The Primary Key
         public int repairID { get; set; }
 
         public int instrumentID { get; set; }

@@ -10,14 +10,21 @@
     background-color: #F49D55;
 }
 
-img {
-    width: 170px;
-    height: 120px;
-    padding: 5px;
+.img-logo {
+    width: 130px;
+    height: auto;
+    padding: 2px;
+    opacity: 0.9;
+}
+.img-front {
+    width: 250px;
+    height: auto;
+    padding: 2px;
+    opacity: 0.8;
 }
 
 li {
-    padding: 10px;
+    padding: 5px;
     margin: 1px;
 }
 

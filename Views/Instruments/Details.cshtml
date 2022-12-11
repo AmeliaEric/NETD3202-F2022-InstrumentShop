@@ -3,51 +3,53 @@
 @{
     ViewData["Title"] = "Details";
 }
-
+<!-- The Title of the page-->
 <h1>Details</h1>
 
 <div>
     <h4>Instrument</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.name)
+        <!-- Titles and Details from the Instrument-->
+        <dt class="col-sm-2">
+            Instrument Name
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.name)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.manufacturerID)
+        <dt class="col-sm-2">
+            Manufacturer ID
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.manufacturerID)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.type)
+        <dt class="col-sm-2">
+            Type
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.type)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.color)
+        <dt class="col-sm-2">
+            Color
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.color)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.quantityBought)
+        <dt class="col-sm-2">
+            Quantity Bought
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.quantityBought)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.priceSold)
+        <dt class="col-sm-2">
+            Price Sold
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.priceSold)
         </dd>
     </dl>
 </div>
+<!-- Takes the user back to the index list or to edit-->
 <div>
     <a asp-action="Edit" asp-route-id="@Model.instrumentID">Edit</a> |
     <a asp-action="Index">Back to List</a>

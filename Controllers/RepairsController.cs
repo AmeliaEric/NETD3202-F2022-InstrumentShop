@@ -45,6 +45,7 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
         }
 
         // GET: Repairs/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -53,6 +54,7 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
         // POST: Repairs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("repairID,instrumentID,owner,phone,email,address,city,province,postalCode")] Repair repair)
@@ -67,6 +69,7 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
         }
 
         // GET: Repairs/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -85,6 +88,7 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
         // POST: Repairs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("repairID,instrumentID,owner,phone,email,address,city,province,postalCode")] Repair repair)
@@ -118,6 +122,7 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
         }
 
         // GET: Repairs/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -136,6 +141,7 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
         }
 
         // POST: Repairs/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

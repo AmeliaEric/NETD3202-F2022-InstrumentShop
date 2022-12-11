@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+<!-- Contains the title and the favicon.ico icon-->
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,7 +14,9 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light navbar-back border-bottom box-shadow mb-3">
             <div class="container">
-                <img src="~/css/Logo.png" alt="image is not available">
+                <!-- Adds in the Logo-->
+                <img class="img-logo" src="~/css/Logo.png" alt="image is not available">
+                <!-- Main Title-->
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Instrument Shop</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -21,6 +24,7 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
+                    <!-- Adds access to all Index Screens-->
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -47,7 +51,7 @@
             @RenderBody()
         </main>
     </div>
-
+    <!-- Footer with copyright and privacy page-->
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2022 - NETD3202_F2022_InstrumentShop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
