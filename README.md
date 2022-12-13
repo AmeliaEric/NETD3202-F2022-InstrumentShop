@@ -1,0 +1,3 @@
+# NETD3202-F2022-InstrumentShop
+Instrument Shop website demo - could be used for tracking instrument storage, manufacturers, and repairs.
+My web application is an instrument store website that can be used by employees to track the instruments in the store, the manufacturers of those instruments, and the repairs of instruments. It allows users to see a table for instruments, manufacturers, and repairs that contain all information needed by an employee to help a customer. Once an employee logs in they are able to create, edit, and delete the listings in any of the tables, but if they are not logged in they are still able to see the details of anything listed in the tables. 
