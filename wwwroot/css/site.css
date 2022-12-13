@@ -1,5 +1,16 @@
-﻿x-ms-webview .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: sienna !important;
+﻿* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.headings {
+    font-family: Rockwell;
+    font-style: normal;
+    font-size: 45px;
+}
+x-ms-webview .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #A26838 !important;
 }
 
 .nav-link-login {
@@ -30,20 +41,21 @@ li {
 
 .background-login {
     background-color: #F49D55;
-    color: sienna;
+    color: #A26838;
 }
 
 h1.display-4 {
-    color: sienna;
+    color: #A26838;
 }
 
 a.navbar-brand {
-    font-size: 20px;
+    font-family: Rockwell;
+    font-size: 24px;
     font-weight: bold;
     white-space: normal;
     text-align: center;
     word-break: break-all;
-    color: sienna;
+    color: #A26838;
 }
 
 /* Provide sufficient contrast against white background */
@@ -104,6 +116,7 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
+    background-color: #FEF3E7;
 }
 
 .footer {

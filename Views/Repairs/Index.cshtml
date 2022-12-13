@@ -10,6 +10,7 @@
     <a asp-action="Create">Create New</a>
     <a asp-action="Searching">Search Repairs By Owner</a>
 </p>
+<!--Table of all Repairs in the database-->
 <table class="table">
     <thead>
         <tr>
@@ -42,44 +43,46 @@
             <th></th>
         </tr>
     </thead>
+    <!--Goes through each Repair in the database and displays all infromation accordingly-->
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.instrumentID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.owner)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.phone)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.address)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.city)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.province)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.postalCode)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.repairID">Edit</a>
-                </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.repairID">Details</a>
-                </td>
-                <td>
-                    <a asp-action="Delete" asp-route-id="@item.repairID">Delete</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.instrumentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.owner)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.province)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.postalCode)
+            </td>
+            <!--Edit, Details, and Delete options for each Repair-->
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.repairID">Edit</a>
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.repairID">Details</a>
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.repairID">Delete</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

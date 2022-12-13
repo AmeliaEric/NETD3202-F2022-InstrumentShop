@@ -1,4 +1,5 @@
-﻿using System;
+﻿#region USING STATEMENTS
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Permissions;
@@ -9,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using NETD3202_F2022_InstrumentShop.Data;
 using NETD3202_F2022_InstrumentShop.Models;
 using Microsoft.AspNetCore.Authorization;
-
+#endregion
 namespace NETD3202_F2022_InstrumentShop.Controllers
 {
     public class InstrumentsController : Controller

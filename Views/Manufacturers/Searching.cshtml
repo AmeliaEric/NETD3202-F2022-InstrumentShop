@@ -6,11 +6,13 @@
     <div class="col-md-4">
         <form asp-action="ShowSearchManufacturer">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!-- Takes in the name of the manufacturer-->
             <div class="form-group">
                 <label name="SearchMan" class="control-label">Manufacturer Name</label>
                 <input name="SearchMan" class="form-control" />
                 <span asp-validation-for="name" class="text-danger"></span>
             </div>
+            <!-- Submits the search-->
             <div class="form-group">
                 <input type="submit" value="Search" class="btn btn-primary" />
             </div>

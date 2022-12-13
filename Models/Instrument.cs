@@ -1,9 +1,10 @@
-﻿using System;
+﻿#region USING STATEMENTS
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-
+#endregion
 namespace NETD3202_F2022_InstrumentShop.Models
 {
     /// <summary>
