@@ -15,19 +15,40 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
 {
     public class InstrumentsController : Controller
     {
+        #region Private Fields
+        /// <summary>
+        /// Database context
+        /// </summary>
         private readonly ApplicationDbContext _context;
+        #endregion
 
+        #region Constructor
+        /// <summary>
+        /// Initialize the database context
+        /// </summary>
+        /// <param name="context"></param>
         public InstrumentsController(ApplicationDbContext context)
         {
             _context = context;
         }
+        #endregion
 
+        #region Public Methods
+        /// <summary>
+        /// Returns a list of all instruments
+        /// </summary>
+        /// <returns></returns>
         // GET: Instruments
         public async Task<IActionResult> Index()
         {
             return View(await _context.Instruments.ToListAsync());
         }
 
+        /// <summary>
+        /// Returns the details of the instrument with the given ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // GET: Instruments/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -46,6 +67,10 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
             return View(instrument);
         }
 
+        /// <summary>
+        /// Returns the view for creating a new instrument
+        /// </summary>
+        /// <returns></returns>
         // GET: Instruments/Create
         [Authorize]
         public IActionResult Create()
@@ -53,6 +78,11 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Adds the instrument to the database
+        /// </summary>
+        /// <param name="instrument"></param>
+        /// <returns></returns>
         // POST: Instruments/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -70,6 +100,11 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
             return View(instrument);
         }
 
+        /// <summary>
+        /// Edits the instrument based off the instrument id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // GET: Instruments/Edit/5
         [Authorize]
         public async Task<IActionResult> Edit(int? id)
@@ -86,7 +121,13 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
             }
             return View(instrument);
         }
-
+        
+        /// <summary>
+        /// Edits the fields of the instrument in the database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="instrument"></param>
+        /// <returns></returns>
         // POST: Instruments/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -123,6 +164,11 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
             return View(instrument);
         }
 
+        /// <summary>
+        /// Ask if the delete should occur of an instrument in the database by the id number
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // GET: Instruments/Delete/5
         [Authorize]
         public async Task<IActionResult> Delete(int? id)
@@ -142,6 +188,11 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
             return View(instrument);
         }
 
+        /// <summary>
+        /// Deletes the instrument from the database by using the instrument id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         // POST: Instruments/Delete/5
         [Authorize]
         [HttpPost, ActionName("Delete")]
@@ -154,19 +205,34 @@ namespace NETD3202_F2022_InstrumentShop.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        /// <summary>
+        /// Checks if the instrument exists in the table
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private bool InstrumentExists(int id)
         {
             return _context.Instruments.Any(e => e.instrumentID == id);
         }
 
+        /// <summary>
+        /// Displays the searching view, the text box and button
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Searching()
         {
             return View();
         }
 
+        /// <summary>
+        /// Seaches through the database based on the instrument name provided
+        /// </summary>
+        /// <param name="SearchInstrument"></param>
+        /// <returns></returns>
         public async Task<IActionResult> ShowSearchInstruments(string SearchInstrument)
         {
             return View("Index", await _context.Instruments.Where(s => s.name.Contains(SearchInstrument)).ToListAsync());
         }
+        #endregion
     }
 }

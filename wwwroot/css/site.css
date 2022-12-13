@@ -1,4 +1,6 @@
-﻿* {
+﻿
+/* General Font Family, Style, and Size for website*/
+* {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-style: normal;
     font-size: 14px;
@@ -9,10 +11,13 @@
     font-style: normal;
     font-size: 45px;
 }
+
+/* Provide sufficient contrast against orange background */
 x-ms-webview .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: #A26838 !important;
 }
 
+/* Makes the login links in the header stand out compared to the other links */
 .nav-link-login {
     font-style: italic;
 }
@@ -47,7 +52,7 @@ li {
 h1.display-4 {
     color: #A26838;
 }
-
+/* Main Website Name */
 a.navbar-brand {
     font-family: Rockwell;
     font-size: 24px;
